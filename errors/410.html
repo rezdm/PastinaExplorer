@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>404 – Pastina not found</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    :root{
+      --bg:#faf7ef; --text:#2b2b2b; --accent:#2f7d32; --gold:#e5b94b; --terracotta:#c56a4a;
+      --shadow:rgba(0,0,0,.08);
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#12110f; --text:#f1eadf; --accent:#7dd47f; --gold:#f0c45a; --terracotta:#e78867; --shadow:rgba(0,0,0,.35); }
+    }
+    *{ box-sizing:border-box }
+    body{
+      margin:0; min-height:100dvh; display:grid; place-items:center;
+      font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color:var(--text); background:var(--bg);
+    }
+    .card{
+      width:min(860px,92vw);
+      background:#fff0; border-radius:20px; box-shadow:0 10px 30px var(--shadow);
+      padding:28px 22px; text-align:center; position:relative; overflow:hidden;
+    }
+    h1{ font-size:clamp(28px,4.8vw,44px); margin:.2em 0 .2em }
+    p{ margin:.4em 0 }
+    .big{ font-size:clamp(16px,2.6vw,20px); opacity:.9 }
+    .btn{
+      display:inline-block; margin-top:14px; padding:10px 16px; border-radius:999px;
+      text-decoration:none; color:white; background:var(--accent); box-shadow:0 6px 14px var(--shadow);
+    }
+    /* Hills */
+    .hills{
+      position:absolute; inset:auto 0 0 0; height:42%;
+      background:linear-gradient(0deg, rgba(0,0,0,.03), transparent 60%);
+    }
+    .hill{ position:absolute; bottom:-2%; width:140%; height:70%; border-radius:50% 50% 0 0; transform:translateX(-20%); }
+    .hill.h1{ background:rgba(47,125,50,.12) }
+    .hill.h2{ background:rgba(47,125,50,.18); width:160%; left:-10% }
+    .hill.h3{ background:rgba(47,125,50,.25); width:180%; left:-20% }
+    /* Cypress & church */
+    .scene{ position:absolute; left:50%; bottom:16%; transform:translateX(-50%); display:flex; gap:22px; align-items:flex-end; }
+    .cypress{ width:10px; height:70px; background:var(--accent); border-radius:6px }
+    .cypress:after{ content:""; display:block; width:10px; height:12px; background:#3b8f3e; border-radius:6px; transform:translateY(-6px) }
+    .church{ width:110px; height:80px; position:relative; background:#fff5; border-radius:6px; box-shadow:0 6px 14px var(--shadow) }
+    .church:before{ content:""; position:absolute; left:8px; right:8px; top:-18px; height:0; border-left:18px solid transparent; border-right:18px solid transparent; border-bottom:18px solid var(--terracotta) }
+    .church:after{ content:""; position:absolute; right:-16px; bottom:32px; width:18px; height:46px; background:#fff6; box-shadow:inset 0 -10px 0 var(--terracotta) }
+    .bell{ position:absolute; right:-12px; bottom:54px; width:10px; height:10px; background:var(--gold); border-radius:50% }
+    /* Pastina (tiny pasta stars) */
+    .pastina{ position:absolute; top:14px; left:50%; transform:translateX(-50%); display:flex; gap:8px; filter:drop-shadow(0 2px 2px var(--shadow)); }
+    .star{ width:16px; height:16px; background:conic-gradient(from 0deg, var(--gold) 0 25%, #f7d882 0 50%, var(--gold) 0 75%, #f7d882 0); clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%) }
+    footer{ margin-top:10px; font-size:.9em; opacity:.65 }
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="title">
+    <div class="pastina" aria-hidden="true">
+      <div class="star"></div><div class="star"></div><div class="star"></div>
+    </div>
+    <h1 id="title">404 – This pastina got lost in Tuscany</h1>
+    <p class="big">We searched the rolling hills around <strong>Pastina</strong>, Santa Luce (PI)… but this page is <em>al dente</em> missing.</p>
+    <p>Maybe it was twirled onto another fork? Try the home page below.</p>
+    <a class="btn" href="/">Return home</a>
+
+    <div class="scene" aria-hidden="true">
+      <div class="cypress"></div>
+      <div class="church"><div class="bell"></div></div>
+      <div class="cypress" style="height:60px"></div>
+      <div class="cypress" style="height:80px"></div>
+    </div>
+    <div class="hills" aria-hidden="true">
+      <div class="hill h3"></div>
+      <div class="hill h2"></div>
+      <div class="hill h1"></div>
+    </div>
+    <footer>Tip: check the URL, or use the site menu to find your dish.</footer>
+  </main>
+</body>
+</html>
+

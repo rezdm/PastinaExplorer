@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Points of Interest - Pastina, Santa Luce (PI)</title>
+
+    <!-- Preconnect to external resources for better performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Include external stylesheet -->
+    <link rel="stylesheet" href="styles.css?v=2026-03-10-03">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Discover points of interest in Pastina, Santa Luce, Pisa. Find restaurants, shops, churches, viewpoints and local services.">
+    <meta name="keywords" content="Pastina, Santa Luce, Pisa, Tuscany, points of interest, restaurants, tourism">
+    <meta name="author" content="Pastina Tourism">
+
+    <!-- Open Graph Meta Tags for social sharing -->
+    <meta property="og:title" content="Points of Interest - Pastina, Santa Luce (PI), Italy">
+    <meta property="og:description" content="Discover the best places to visit in Pastina, Santa Luce, Pisa">
+    <meta property="og:site_name" content="Pastina Explorer">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Preview -->
+    <meta property="og:image" content="https://pastina.reznitsky.info/pastina-preview.png">
+    <meta property="og:image:secure_url" content="https://pastina.reznitsky.info/pastina-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Pastina Explorer preview showing a curated guide to Santa Luce and the Etruscan Coast">
+    <meta property="og:url" content="https://pastina.reznitsky.info/">
+
+    <!-- Twitter preview -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pastina">
+    <meta name="twitter:description" content="Discover the best places to visit in Pastina, Santa Luce, Pisa">
+    <meta name="twitter:image" content="https://pastina.reznitsky.info/pastina-preview.png">
+    <meta name="twitter:image:alt" content="Pastina Explorer preview showing a curated guide to Santa Luce and the Etruscan Coast">
+</head>
+<body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Main Header -->
+    <header class="header">
+        <p class="header-kicker">Santa Luce and the Etruscan Coast</p>
+        <h1>Pastina Explorer</h1>
+        <p class="header-subtitle">A hand-picked local guide for beaches, hill villages, food stops, walking ideas, and practical finds between Santa Luce and the coast. Last update: March 9, 2026.</p>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container" id="main-content">
+        <!-- Search and Filter Section -->
+        <section class="search-container" aria-label="Search and filter options">
+            <div class="search-wrapper">
+                <input
+                    type="text"
+                    class="search-input"
+                    id="search-input"
+                    placeholder="Search for places..."
+                    aria-label="Search places"
+                    aria-describedby="search-help"
+                >
+                <button
+                    type="button"
+                    class="search-clear"
+                    id="search-clear"
+                    aria-label="Clear search"
+                    hidden
+                >&times;</button>
+            </div>
+            <span id="search-help" class="visually-hidden">Type to search by name, description, or features</span>
+
+            <div class="filter-tags-wrapper">
+                <div class="filter-tags" id="filter-tags" role="tablist" aria-label="Category filters">
+                    <!-- Filter tags will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Results count announcement for screen readers -->
+        <div id="results-announcement" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+
+        <!-- Results count display -->
+        <div class="results-count" id="results-count" aria-live="polite"></div>
+
+        <!-- POIs Display Grid -->
+        <section class="pois-grid" id="pois-container" aria-label="Points of interest">
+            <!-- Skeleton loading state -->
+            <div class="skeleton-card" aria-hidden="true">
+                <div class="skeleton-image"></div>
+                <div class="skeleton-content">
+                    <div class="skeleton-title"></div>
+                    <div class="skeleton-text"></div>
+                    <div class="skeleton-text short"></div>
+                </div>
+            </div>
+            <div class="skeleton-card" aria-hidden="true">
+                <div class="skeleton-image"></div>
+                <div class="skeleton-content">
+                    <div class="skeleton-title"></div>
+                    <div class="skeleton-text"></div>
+                    <div class="skeleton-text short"></div>
+                </div>
+            </div>
+            <div class="skeleton-card" aria-hidden="true">
+                <div class="skeleton-image"></div>
+                <div class="skeleton-content">
+                    <div class="skeleton-title"></div>
+                    <div class="skeleton-text"></div>
+                    <div class="skeleton-text short"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top" hidden>
+        <span aria-hidden="true">&uarr;</span>
+    </button>
+    <script>
+        window.PASTINA_DATA_VERSION = '2026-03-10-03';
+
+        if (window.location.protocol === 'file:') {
+            document.write('<script src="pois-data.js?v=' + encodeURIComponent(window.PASTINA_DATA_VERSION) + '"><\\/script>');
+        }
+    </script>
+    <!-- Include JavaScript file -->
+    <script src="script.js?v=2026-03-10-03"></script>
+</body>
+</html>
+

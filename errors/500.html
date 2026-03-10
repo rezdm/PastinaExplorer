@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>500 – Pasta machine jammed</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    :root{
+      --bg:#faf7ef; --text:#2b2b2b; --accent:#2f7d32; --gold:#e5b94b; --terracotta:#c56a4a;
+      --shadow:rgba(0,0,0,.08);
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#12110f; --text:#f1eadf; --accent:#7dd47f; --gold:#f0c45a; --terracotta:#e78867; --shadow:rgba(0,0,0,.35); }
+    }
+    *{ box-sizing:border-box }
+    body{
+      margin:0; min-height:100dvh; display:grid; place-items:center;
+      font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color:var(--text); background:var(--bg);
+    }
+    .card{
+      width:min(860px,92vw);
+      background:#fff0; border-radius:20px; box-shadow:0 10px 30px var(--shadow);
+      padding:28px 22px; text-align:center; position:relative; overflow:hidden;
+    }
+    h1{ font-size:clamp(28px,4.8vw,44px); margin:.2em 0 .2em }
+    p{ margin:.4em 0 }
+    .big{ font-size:clamp(16px,2.6vw,20px); opacity:.9 }
+    .btn{
+      display:inline-block; margin-top:14px; padding:10px 16px; border-radius:999px;
+      text-decoration:none; color:white; background:var(--accent); box-shadow:0 6px 14px var(--shadow);
+    }
+    .hills{ position:absolute; inset:auto 0 0 0; height:42%; background:linear-gradient(0deg, rgba(0,0,0,.03), transparent 60%) }
+    .hill{ position:absolute; bottom:-2%; width:140%; height:70%; border-radius:50% 50% 0 0; transform:translateX(-20%) }
+    .hill.h1{ background:rgba(47,125,50,.12) }
+    .hill.h2{ background:rgba(47,125,50,.18); width:160%; left:-10% }
+    .hill.h3{ background:rgba(47,125,50,.25); width:180%; left:-20% }
+    .steam{ position:absolute; left:50%; top:20px; width:140px; height:90px; transform:translateX(-50%); opacity:.9 }
+    .steam:before,
+    .steam:after{
+      content:""; position:absolute; width:70px; height:70px; border:4px solid var(--gold);
+      border-color:var(--gold) transparent transparent transparent; border-radius:50%;
+      animation: puff 3s infinite ease-in-out;
+    }
+    .steam:after{ left:60px; animation-delay:1.2s }
+    @keyframes puff{ 0%{ transform:translateY(0) rotate(20deg); opacity:.75 } 100%{ transform:translateY(-26px) rotate(60deg); opacity:.05 } }
+    .bowl{ position:absolute; left:50%; top:86px; transform:translateX(-50%); width:160px; height:22px; background:var(--terracotta); border-radius:12px; box-shadow:0 6px 14px var(--shadow) }
+    .noodles{ position:absolute; left:50%; top:64px; transform:translateX(-50%); width:160px; height:26px; background:repeating-linear-gradient(90deg, #f7d882 0 8px, #e5b94b 8px 16px); border-radius:10px 10px 0 0 }
+    footer{ margin-top:10px; font-size:.9em; opacity:.65 }
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="title">
+    <div class="steam" aria-hidden="true"></div>
+    <div class="noodles" aria-hidden="true"></div>
+    <div class="bowl" aria-hidden="true"></div>
+
+    <h1 id="title">500 – Our pasta machine jammed</h1>
+    <p class="big">The kitchen in <strong>Pastina</strong> is a little too busy right now. The server had a saucy moment.</p>
+    <p>We’re stirring things back to order. Please try again in a minute.</p>
+    <a class="btn" href="/">Back to safety</a>
+
+    <div class="hills" aria-hidden="true">
+      <div class="hill h3"></div>
+      <div class="hill h2"></div>
+      <div class="hill h1"></div>
+    </div>
+    <footer>If this keeps happening, contact the chef (site admin).</footer>
+  </main>
+</body>
+</html>
+

@@ -1,0 +1,4 @@
+dist/
+googlebd*.html
+.claude/
+node_modules/
