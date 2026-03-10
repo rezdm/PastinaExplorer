@@ -1,4 +1,6 @@
-# Pastina Web
+# Pastina Explorer
+
+[Pastina page itself: https://pastina.reznitsky.info/](https://pastina.reznitsky.info/)
 
 ![Pastina - Toscana](pastina-preview.png)
 
