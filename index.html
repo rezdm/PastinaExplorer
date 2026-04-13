@@ -24,6 +24,43 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
 
+    <!-- Google Analytics (loaded only after cookie consent) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        function loadGoogleAnalytics() {
+            if (document.querySelector('script[src*="googletagmanager.com/gtag"]')) return;
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-TG4YYDDX58';
+            document.head.appendChild(s);
+            gtag('js', new Date());
+            gtag('config', 'G-TG4YYDDX58');
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookie-consent', 'accepted');
+            loadGoogleAnalytics();
+            hideCookieBanner();
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookie-consent', 'declined');
+            hideCookieBanner();
+        }
+
+        function hideCookieBanner() {
+            var banner = document.getElementById('cookie-banner');
+            if (banner) banner.hidden = true;
+        }
+
+        (function() {
+            var consent = localStorage.getItem('cookie-consent');
+            if (consent === 'accepted') loadGoogleAnalytics();
+        })();
+    </script>
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
@@ -120,6 +157,18 @@
         </section>
     </main>
 
+    <!-- Cookie consent banner -->
+    <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" hidden>
+        <p class="cookie-banner-text">
+            We use cookies for analytics to understand how visitors use this site.
+            No personal data is sold or shared with third parties.
+        </p>
+        <div class="cookie-banner-actions">
+            <button type="button" class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Accept</button>
+            <button type="button" class="cookie-btn cookie-btn-decline" onclick="declineCookies()">Decline</button>
+        </div>
+    </div>
+
     <!-- Back to top button -->
     <button class="back-to-top" id="back-to-top" aria-label="Back to top" hidden>
         <span aria-hidden="true">&uarr;</span>
@@ -129,6 +178,12 @@
 
         if (window.location.protocol === 'file:') {
             document.write('<script src="pois-data.js?v=' + encodeURIComponent(window.PASTINA_DATA_VERSION) + '"><\\/script>');
+        }
+    </script>
+    <!-- Show cookie banner if no consent choice yet -->
+    <script>
+        if (!localStorage.getItem('cookie-consent')) {
+            document.getElementById('cookie-banner').hidden = false;
         }
     </script>
     <!-- Include JavaScript file -->
